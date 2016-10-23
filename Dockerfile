@@ -18,9 +18,11 @@ RUN apt-get -y install build-essential libpcre3 libpcre3-dev libssl-dev wget unz
             make && \
             make install && \
             mkdir /usr/local/nginx/html/stream && \
-            mkdir /usr/local/nginx/html/stream/vids
+            mkdir /usr/local/nginx/html/stream/vids && \
+            mkdir /usr/local/nginx/html/stream/css
 
 COPY nginx.conf /usr/local/nginx/conf/nginx.conf
-COPY css index.html vlc.html /usr/local/nginx/html/stream/
+COPY index.html vlc.html /usr/local/nginx/html/stream/
+COPY css /usr/local/nginx/html/stream/css/
 EXPOSE 1935 80
 CMD ["/usr/local/nginx/sbin/nginx"]
