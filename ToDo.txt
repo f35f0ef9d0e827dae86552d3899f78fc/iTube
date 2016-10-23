@@ -1,0 +1,12 @@
+1) Run the container with --restart=always
+2) Either script or provide instructions for Stream key in index.html, nginx.conf and FQDN in vlc.html
+3) Provide an upgrade script that handles removal of containers
+
+# Get container ID of stopped container
+#ourContainer=$(docker ps -a -q --filter=name=NAME)
+
+# Delete the intermediate container
+#docker rm $ourContainer
+
+# Launch a new container using our custom image
+#docker run -d -h $(hostname -a) --name="NAME" --restart=always -p 80:80 -p 1935:1935 IMAGENAME
