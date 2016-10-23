@@ -16,8 +16,8 @@ RUN apt-get -y install build-essential libpcre3 libpcre3-dev libssl-dev wget unz
         cd nginx-1.9.9 && \
             ./configure --with-http_ssl_module --add-module=../nginx-rtmp-module-master && \
             make && \
-            make install
-            mkdir /usr/local/nginx/html/stream
+            make install && \
+            mkdir /usr/local/nginx/html/stream && \
             mkdir /usr/local/nginx/html/stream/vids
 
 ADD nginx.conf /usr/local/nginx/conf/nginx.conf
