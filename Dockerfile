@@ -16,10 +16,12 @@ RUN apt-get -y install build-essential libpcre3 libpcre3-dev libssl-dev wget unz
         cd nginx-1.9.9 && \
             ./configure --with-http_ssl_module --add-module=../nginx-rtmp-module-master && \
             make && \
-            make install && \
-            mkdir /usr/local/nginx/html/stream && \
-            mkdir /usr/local/nginx/html/stream/vids && \
-            mkdir /usr/local/nginx/html/stream/css
+            make instal
+
+RUN mkdir /usr/local/nginx/html/stream && \
+    mkdir /usr/local/nginx/html/stream/vids && \
+    mkdir /usr/local/nginx/html/stream/css && \
+    mkdir /usr/local/nginx/html/stream/images
 
 COPY nginx.conf /usr/local/nginx/conf/nginx.conf
 COPY index.html vlc.html /usr/local/nginx/html/stream/
